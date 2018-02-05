@@ -92,3 +92,38 @@
 
 
 --------------------------------------------------------
+
+
+    How to Install Eclipse 4.7 on CentOS 7 /
+
+
+    > su
+
+    > yum -y install java-1.8.0-openjdk  ( if not installed )
+
+    > curl -O http://ftp.jaist.ac.jp/pub/eclipse/technology/epp/downloads/release/oxygen/1a/eclipse-java-oxygen-1a-linux-gtk-x86_64.tar.gz
+
+    > tar -zxvf eclipse-java-oxygen-1a-linux-gtk-x86_64.tar.gz -C /opt
+
+    > ln -s /opt/eclipse/eclipse /usr/bin/eclipse
+
+    > vi /usr/share/applications/eclipse-4.7.desktop
+
+        [Desktop Entry]
+        Encoding=UTF-8
+        Name=Eclipse 4.7
+        Comment=Eclipse Oxygen
+        Exec=/usr/bin/eclipse
+        Icon=/opt/eclipse/icon.xpm
+        Categories=Application;Development;Java;IDE
+        Version=1.0
+        Type=Application
+        Terminal=0
+
+    > eclipse
+
+
+--------------------------------------------------------
+
+
+        
