@@ -1,0 +1,426 @@
+
+java tech
+--------------
+   1. Java SE
+      -> to develope single-user application(s)
+      -> basic n/w-ed application
+   2. Java EE
+      -> to develope dynamic web/enterprise -application
+   3. Java ME
+   4. Java Fx
+   5. Embedded Java 
+   ----------------------------------------------------------  
+   java community 
+      --> syntax / new standards into the lang
+    version : java 8 / 9
+   -----------------------------------------------------------
+   Java programming style
+
+   ==> component & container style 
+
+       component ==> business logic based application need
+       container ==> infra logic
+
+    ----------------------------------------------------     
+
+    component(s)                 container(s)
+    ----------------------------------------------------
+
+    1. Java SE
+
+       a. application        : client-JRE
+       b. applet             : browser with JRE
+
+    2. Java EE
+
+       a. web components ( servlet,JSP)   :  web-container  ( e.g tomcat, jetty,..)
+       b. EJB ( Enterpise Java Bean )     :  EJB-container  ( e.g glassfish,tomee,...)
+
+   -------------------------------------------------------------
+
+    Application-Server / JEE Server    s/w  
+
+     = web-container + ejb-container + addinal services
+
+     e.g
+
+        1. websphere   -> IBM
+        2. weblogic    -> Oracle
+        3. JBOSS       -> Jboss community
+        ...
+
+   ------------------------------------------------------------------
+
+
+    Java Environment
+
+
+    1. Development
+
+        - editor/ide support
+       
+        - java-compiler
+        - other tools
+        ....
+
+            - JDK (  Java Deployment Kit )  -> 
+
+        build-tools
+
+            - ANT ( Another Neat Tool )   : ASF
+            - Maven   : ASF
+            - Gradle
+            - Ivy
+            - OSGI bundles..
+
+        .....    
+
+    2. Deployment 
+
+        - specific JRE / application-server
+
+    -------------------------------------------------------------------
+
+
+
+    Java syntax
+    ------------------------------------------
+
+    
+    1. Java Project
+    ------------------
+
+
+     proj
+        |
+        |------ package1   ( .java / .class )
+        |  |--------------package1.1
+        |
+        |------ package2
+        |
+        |--- config files ( .properties/.xml)
+        |
+        |-- static resoources ( .txt/.....)
+
+     ------------------------------------------------------------------------  
+
+     2. Java File
+     -------------------
+
+     public-type.java   
+     |------------------------------------------
+     |
+     |// package declaration ( 1 )
+     |
+     |// import statement(s) ( n )
+     |
+     |// public type ( class | interface | enum | annotation) ( 1 )
+     |
+     |// default type ( n )
+     |-----------------------------------------------
+    
+
+    ------------------------------------------------------------------------ 
+
+    3. package declaration
+
+
+       why we need ?
+
+       --> for easy maintainance
+       --> to avoid type name collisions
+
+       syntax:
+
+       package root.sub1;
+               or
+               root.sub1.sub2;
+
+      -Recommended guideline for paclage declaration:
+    
+
+         e.g
+
+         Employee.java ==> emp ==> em ==> sapient ==> com;
+
+         package c-type.c-name.p-name.m-name;
+         e.g
+         package com.sapient.em.emp;
+
+    ------------------------------------------------------------------------ 
+
+   4. import statement
+
+    syntax:
+
+        import package.*;
+        import package.package1.*;
+
+    e.g
+
+     proj
+        - p1 ( A.java, B.java )
+        - p2 ( C.java ,D.java )
+        - p3 ( E.java)
+            -p31 ( F.java)
+        - p4 ( E.java)    
+
+    e.g A.java
+
+    package p1;
+    import p2.C;
+    import p2.D;
+    // or
+    import p2.*;
+    import p3.*;
+    import p3.p31.*
+    import p4.*;
+    public class A{
+        B b;
+        C c;
+        D d;
+        F f;
+        p4.E e;
+    }
+
+    ------------------------------------------------------------------------ 
+
+    
+   object & class 
+   ----------------
+    
+    what is object ?
+        - data,info,props,attr    ==> State
+        - work,oprn,func,method   ==> Behav
+        - addr,location,reference ==> Identity
+
+    obj ==> SBI
+
+    what is class
+
+       --> description/template ( S & B ) of similar objects
+
+     class ==> instance(s)
+
+    ---------------------------------------------------------------------------
+
+    OO concepts
+
+    1. Abstraction / Interface / Front-end
+
+       why we need?
+
+       ==> easy to use/learn by dependent
+       ==> for loose-coupling
+
+    2. Encapsulation / Implementation / Back-end
+
+       ==> to hide complexity
+       ==> to  spme state & behav from dependent
+
+    3. Inheritance
+
+        => re-use/inherit common state & behav from generalized-class to specialized class's objects 
+
+    4. Polymophism
+
+       ==> to acheive 'open for extension & closed for modification' principle on object 
+
+
+    -----------------------------------------------------------------------------------------        
+
+    Type Syntax
+    ================
+
+     5. class syntax
+     ------------------
+
+
+    ________   __________ class Name [extends] Super-Class {
+    [public]   [abstract]            [implements] I1,I2
+    [      ]   [strictfp]   // state definiation  ==> variables
+               [final]      // constructors
+                            // behav              ==> methods
+    ----------------------  // inner class
+    [private]   [static]   
+    [public]
+    [protected]
+    [         ]            }
+
+
+
+     6. interface syntax
+     --------------------
+
+
+     interface Name [extends] I1,I2{
+         // state  ==> constant state
+         // behav  ==> abstract behav
+         e.g  void m();
+     }
+
+
+     7. enum syntax
+     --------------
+
+     enum Gender{
+         MALE,FEMALE
+     }
+     enum Days{
+         MONDAY,.....
+     }
+
+     8. annotation syntax
+     --------------------
+
+     @interface Annotation{
+         String prop1();
+     }
+
+
+    -----------------------------------------------------------------------------------------        
+
+
+    9. varaibles  ==> data
+
+     2 types of variables
+
+      a. simple / primitives ===> values
+      b. complex / reference ==> objects
+
+
+      syntax
+      -----------
+
+     ___________  ____________ DataType varName= [value/obj];
+     [public]     [static]
+     [private]    [final]
+     [protected]  [volatile]
+     [        ]   [transient]
+
+        local variables
+     --------------------------
+     - Nil-       [final]
+
+     -----------------------------------------------------------------------------------------
+
+     10. method  ==> behav
+
+
+
+     syntax
+     --------
+
+    __________  ____________ ReturnType methodName([args]){
+    [public]    [static]              //...
+    [private]   [final]              // A,R,L & assigment operations
+    [protected] [synchronized]       // conditional
+    [      ]    [strictfp]           // looping
+                [abstract]            // invoking other's behav
+                [native]              [result]     
+                
+                             }
+
+-----------------------------------------------------------------------------------------
+
+
+// 11 constructor
+
+ why we need ?
+
+ in java , obj creation 2 step process
+
+ step-1 : memory allocation from heap  ==> new
+ step-2 : initialize that memory with obj's data ==> constructor
+
+ syntax
+
+  _______ ______ ClassName([args]){
+  [public]       // init logic.
+  [private]      }
+  [protected]
+  [       ]
+
+  -----------------------------------------------------------------------------------------
+
+  Naming Conventions
+  --------------------
+
+   keywords  ==> lower-case
+   package   ==> lower-case
+
+   Type Names ==> pascal-case , A_____B______C______
+
+   var/method  ==> camel-case , _____A_____B________
+
+   constant var ==> upper-case
+
+   -----------------------------------------------------------------------------------------
+
+
+    java Application - Build-tools
+    ---------------------------------
+
+
+    build life-cycles
+
+       - verify
+       - compile
+       - run unit test-cases
+       - package
+       ...
+
+
+      how to build java-application
+
+       - ANT
+       - Maven ( 90% )
+       - Gradle
+       ...
+     
+     ----------------------------------------
+
+     MAVEN
+
+        -> build-tool
+            +
+        -> dependency-management tool
+        -> documentation tools
+
+
+        from ASF ( Apache Software Foundation )
+  
+  ------------------------------------------
+
+
+    java based application , distributed as
+
+
+    - .jar ( Java Archive )
+    - .war ( Web Archive )
+    - .ear ( Enterpise Archive )  ==> .jar + .war
+
+
+  -----------------------------------------------
+
+
+   Unit-Testing
+
+
+   ==> AAA
+
+    A  --> Arrange
+    A  --> Act
+    A  --> Assert
+
+    How to do unit-testing in java-based application?
+
+     using 'Unit-Testing F.W'
+
+     ==> Junit 
+
+         --> we can write test-cases
+         --> we can run test-cases using test-runners
+
+    --------------------------------------------------------  
+

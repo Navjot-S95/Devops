@@ -1,0 +1,94 @@
+
+
+
+    --------------------------------------------------------   
+    install CentOS/Ubuntu in VBOX
+    --------------------------------------------------------  
+
+    Setting up ssh access on the VM if required
+
+    > ip addr
+    > cd /etc/sysconfig/network-scripts/
+    > sudo vi ifcfg-enp0s3
+
+        change, onboot=yes  
+
+    --------------------------------------------------------  
+
+    sudo yum install wget
+
+    --------------------------------------------------------  
+
+    Install JAVA 8 on CentOS/
+    -------------------------
+
+    Step 1 – Download Latest Java Archive
+    -------------------------------------
+
+    > cd /opt/
+    > wget --no-cookies --no-check-certificate --header "Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie" "http://download.oracle.com/otn-pub/java/jdk/8u161-b12/2f38c3b165be4555a1fa6e98c45e0808/jdk-8u161-linux-x64.tar.gz"
+    > tar xzf jdk-8u161-linux-x64.tar.gz
+    
+    Step 2 – Install Java 8 with Alternatives
+    -------------------------------------
+
+    > cd /opt/jdk1.8.0_161/
+    > alternatives --install /usr/bin/java java /opt/jdk1.8.0_161/bin/java 2
+    > alternatives --config java
+
+    > alternatives --install /usr/bin/jar jar /opt/jdk1.8.0_161/bin/jar 2
+    > alternatives --install /usr/bin/javac javac /opt/jdk1.8.0_161/bin/javac 2
+    > alternatives --set jar /opt/jdk1.8.0_161/bin/jar
+    > alternatives --set javac /opt/jdk1.8.0_161/bin/javac
+
+
+    Step 3 – Check Installed Java Version
+    -------------------------------------
+
+    > java -version
+
+    Step 4 – Setup Java Environment Variables
+
+    > export JAVA_HOME=/opt/jdk1.8.0_161
+    > export JRE_HOME=/opt/jdk1.8.0_161/jre
+    > export PATH=$PATH:/opt/jdk1.8.0_161/bin:/opt/jdk1.8.0_161/jre/bin
+
+
+    --------------------------------------------------------  
+
+    Install Maven 
+    -------------
+
+
+   Step 1 – Install Java
+   ----------------------
+
+    > java -version 
+
+   Step 2 – Install Apache Maven
+   -----------------------------
+
+   > cd /usr/local
+   > wget http://www-eu.apache.org/dist/maven/maven-3/3.5.2/binaries/apache-maven-3.5.2-bin.tar.gz
+
+   > sudo tar xzf apache-maven-3.5.2-bin.tar.gz
+   > sudo ln -s apache-maven-3.5.2  maven
+
+   Step 3 – Setup Environment Variables
+   ------------------------------------
+
+   > sudo vi /etc/profile.d/maven.sh
+
+    and add following content.
+
+        export M2_HOME=/usr/local/maven
+        export PATH=${M2_HOME}/bin:${PATH}
+
+   > source /etc/profile.d/maven.sh  
+
+   > mvn -version 
+
+   > rm -f /usr/local/apache-maven-3.5.2-bin.tar.gz   
+
+
+--------------------------------------------------------
