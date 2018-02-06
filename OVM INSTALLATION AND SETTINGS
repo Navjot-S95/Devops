@@ -1,0 +1,30 @@
+Install ovm through setup
+After installing click -> new
+name - any
+type - linux
+version - redhat 64
+choose memory size ram
+select
+create virtual hard drive now
+select dynamic size -(so that size increases as you put data in it)
+choose size storage
+
+after creating 
+
+now click on setting
+General -> Advanced
+share clipboard - select bidirection
+Drag 'drop - select bidirecton
+
+System -> motherboard
+boot order -cd/dvd
+            - hard disk
+        -> acceleration
+       enable VT-x /amd-v(why? so that we can run another virtual machine on this virtual machne)
+ Storage -> controller ide
+ in attributes select cd icon and choose a virtual cd/dvd(select your iso file)
+ 
+ network -> attched to : host only (so that host can access outside world internet)
+          -> advanced 
+          promiscuous mode - allow all
+          
