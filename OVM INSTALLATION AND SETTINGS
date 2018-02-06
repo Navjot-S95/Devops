@@ -28,3 +28,36 @@ boot order -cd/dvd
           -> advanced 
           promiscuous mode - allow all
           
+
+after this click on start
+if does'nt work  you have to enable virtualization technology in bios
+{press F1 or F10 duirng startupof basemachine to enter bios
+after that
+go in system configuration 
+enable virtualization technology
+save exit
+}
+
+again click start in vm box
+install cent os
+settings
+Software selection -server with guide
+installation destination - select configure partioning
+select standard partitioning 
+then click on +
+select / 
+desired capcity half of selected storage space
+
+then again +
+select/ swap
+desired capacity :
+for <8 choose twice of ram
+for 8 to 16 choose 1.5 times
+for more than 16 choose same as ram
+
+
+
+network and host name
+ethernet on
+thats it
+
