@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata modelVersion="1.1.0">
+  <groupId>com.mycompany.app</groupId>
+  <artifactId>my-app</artifactId>
+  <version>10.0.3-SNAPSHOT</version>
+  <versioning>
+    <snapshot>
+      <timestamp>20180413.095720</timestamp>
+      <buildNumber>4</buildNumber>
+    </snapshot>
+    <lastUpdated>20180413095720</lastUpdated>
+    <snapshotVersions>
+      <snapshotVersion>
+        <extension>jar</extension>
+        <value>10.0.3-20180413.095720-4</value>
+        <updated>20180413095720</updated>
+      </snapshotVersion>
+      <snapshotVersion>
+        <extension>pom</extension>
+        <value>10.0.3-20180413.095720-4</value>
+        <updated>20180413095720</updated>
+      </snapshotVersion>
+    </snapshotVersions>
+  </versioning>
+</metadata>

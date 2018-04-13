@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-SymbolicName: org.sonatype.nexus.plugins.nexus-content-plugin
+Export-Package: org.sonatype.nexus.content,org.sonatype.nexus.content.
+ internal
+Bundle-Version: 2.14.8.01
+Bundle-ClassPath: nexus-content-plugin-2.14.8-01.jar
+Require-Bundle: org.sonatype.nexus.plugin-api;resolution:=optional
+Bundle-ManifestVersion: 2
+

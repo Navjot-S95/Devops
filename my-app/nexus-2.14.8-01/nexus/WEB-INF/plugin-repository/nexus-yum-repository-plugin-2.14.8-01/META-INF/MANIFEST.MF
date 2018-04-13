@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Bundle-SymbolicName: org.sonatype.nexus.plugins.nexus-yum-repository-p
+ lugin
+Export-Package: org.apache.commons.exec,org.apache.commons.exec.enviro
+ nment,org.apache.commons.exec.launcher,org.apache.commons.exec.util,o
+ rg.sonatype.nexus.yum,org.sonatype.nexus.yum.internal,org.sonatype.ne
+ xus.yum.internal.capabilities,org.sonatype.nexus.yum.internal.guice,o
+ rg.sonatype.nexus.yum.internal.rest,org.sonatype.nexus.yum.internal.t
+ ask
+Bundle-Version: 2.14.8.01
+Bundle-ClassPath: nexus-yum-repository-plugin-2.14.8-01.jar,dependenci
+ es/commons-exec-1.1.jar
+Require-Bundle: org.sonatype.nexus.plugin-api;resolution:=optional,org
+ .sonatype.nexus.plugins.nexus-capabilities-plugin;bundle-version=2.14
+ .8,org.sonatype.nexus.plugins.nexus-restlet1x-plugin;bundle-version=2
+ .14.8,org.sonatype.nexus.plugins.nexus-kazuki-plugin;bundle-version=2
+ .14.8
+Bundle-ManifestVersion: 2
+

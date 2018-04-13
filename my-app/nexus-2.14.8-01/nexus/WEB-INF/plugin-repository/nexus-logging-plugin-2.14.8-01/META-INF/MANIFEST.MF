@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-SymbolicName: org.sonatype.nexus.plugins.nexus-logging-plugin
+Export-Package: org.sonatype.nexus.logging,org.sonatype.nexus.logging.
+ internal,org.sonatype.nexus.logging.model,org.sonatype.nexus.logging.
+ rest
+Bundle-Version: 2.14.8.01
+Bundle-ClassPath: nexus-logging-plugin-2.14.8-01.jar
+Require-Bundle: org.sonatype.nexus.plugin-api;resolution:=optional,org
+ .sonatype.nexus.plugins.nexus-siesta-plugin;bundle-version=2.14.8,org
+ .sonatype.nexus.plugins.nexus-ui-extjs3-plugin;bundle-version=2.14.8
+Bundle-ManifestVersion: 2
+
